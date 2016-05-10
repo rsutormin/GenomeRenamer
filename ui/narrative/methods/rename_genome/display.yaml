@@ -1,0 +1,49 @@
+#
+# define display information
+#
+name: Rename Genome
+
+tooltip: |
+    Perform changing name inside genome object
+
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+    apps:
+        related:
+            []
+        next:
+            []
+    methods:
+        related:
+            []
+        next:
+            []
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    parameter_1 :
+        ui-name : |
+            Genome object
+        short-hint  : |
+            This object will be overwritten after rename operation is done
+        long-hint  : |
+            This object will be overwritten after rename operation is done
+
+    parameter_2 :
+        ui-name : |
+            New genome name
+        short-hint  : |
+            New name that will be put into genome object
+        long-hint  : |
+            New name that will be put into genome object
+
+description : |
+    <p>Performs changing of value in "scientific_name" field of genome object</p>

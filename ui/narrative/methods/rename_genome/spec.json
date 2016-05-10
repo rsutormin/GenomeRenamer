@@ -1,0 +1,65 @@
+{
+    "ver": "0.0.1",
+    "authors": [
+        "rsutormin"
+    ],
+    "contact": "",
+    "categories": ["active"],
+    "widgets": {
+        "input": null,
+        "output": "kbaseGenomeView"
+    },
+    "parameters": [ 
+        {
+            "id": "parameter_1",
+            "optional": false,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "text",
+            "text_options": {
+                "valid_ws_types": [ "KBaseGenomes.Genome" ]
+            }
+        },
+        {
+            "id": "parameter_2",
+            "optional": false,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "text",
+            "text_options": {
+                "valid_ws_types": []
+            }
+        }
+    ],
+    "behavior": {
+        "service-mapping": {
+            "url": "",
+            "name": "GenomeRenamer",
+            "method": "rename_genome",
+            "input_mapping": [
+                {
+                    "input_parameter": "parameter_1",
+                    "target_property": "genome_ref",
+                    "target_type_transform": "ref"
+                },
+                {
+                    "input_parameter": "parameter_2",
+                    "target_property": "new_genome_name"
+                }
+            ],
+            "output_mapping": [
+                {
+                    "input_parameter": "parameter_1",
+                    "target_property": "id"
+                },
+                {
+                    "narrative_system_variable": "workspace",
+                    "target_property": "ws"
+                }
+            ]
+        }
+    },
+    "job_id_output_field": "docker"
+}
